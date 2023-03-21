@@ -1,0 +1,10 @@
+props = properties ( thuoc tinh, tinh chat)
+
+nested component  >>> comp cha; comp con
+    moi comp >>> quan ly state
+        doi khi state cha share cho comp con
+            comp con muon nhan state comp cha >>> co props
+
+fire event: child -> parent (props)
+            parent -> child (ref)
+emitter (fire event / create & listen event) để clear data modal; 
