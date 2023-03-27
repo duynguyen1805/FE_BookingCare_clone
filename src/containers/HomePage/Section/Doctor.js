@@ -6,8 +6,11 @@ import * as actions from '../../../store/actions';
 import Slider from 'react-slick';
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router';
 
 class Doctor extends Component {
+
+    
 
     constructor(props) {
         super(props)
@@ -26,6 +29,13 @@ class Doctor extends Component {
             this.setState({
                 arrDoctors: arrDoctors
             })
+        }
+    }
+
+    handleViewDetailDoctor = (dataDoctor) => {
+        // console.log("view info doctor; ", dataDoctor);
+        if(this.props.history){
+            this.props.history.push(`/detail-doctor/${dataDoctor.id}`)
         }
     }
 
@@ -52,9 +62,11 @@ class Doctor extends Component {
                                         imageBase64 = new Buffer(item.image, 'base64').toString('binary');
                                     }
                                     let nameVI = `${item.positionData.valueVI}, ${item.lastName}, ${item.firstName}`;
-                                    let nameEN = `${item.positionData.valueEN}, ${item.lastName}, ${item.firstName}`;
+                                    let nameEN = `${item.positionData.valueEN}, ${item.firstName}, ${item.lastName}`;
                                     return(
-                                        <div className='section-customize' key={index}>
+                                        <div className='section-customize' key={index} onClick= {() => {
+                                            this.handleViewDetailDoctor(item)
+                                        }}>
                                             <div className='outer-bg'>
                                                 <div className='bg-image section-doctor'
                                                     style={{backgroundImage: `url(${imageBase64})`}}
@@ -93,4 +105,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Doctor));

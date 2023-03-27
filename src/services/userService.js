@@ -36,6 +36,26 @@ const getTopDoctorHomeServiceAPI = (limit) => {
     return axios.get(`/api/top-doctor-homepage?limit=${limit}`);
 }
 
+const getAllDoctorServiceAPI = () => {
+    return axios.get(`/api/get-all-doctors`);
+}
+
+const saveDetailDoctorServiceAPI = (data) => {
+    return axios.post("/api/save-infor-doctors", data);
+}
+
+const getDetailInforDoctor = (id) => {
+    return axios.get(`/api/get-detail-doctor-by-id?id=${id}`)
+}
+
+const saveBulkScheduleDoctorServiceAPI = (data) => {
+    return axios.post("/api/bulk-create-schedule", data);
+}
+
+const getScheduleDoctorByDate = (doctorId, date) => {
+    return axios.get(`/api/get-schedule-doctor-by-date?doctorId=${doctorId}&date=${date}`)
+}
+
 export {
     handleLoginAPI,
     getAllUser,
@@ -43,5 +63,10 @@ export {
     DeleteUserServiceAPI,
     EditUserServiceAPI,
     getAllCodeService,
-    getTopDoctorHomeServiceAPI
+    getTopDoctorHomeServiceAPI,
+    getAllDoctorServiceAPI,
+    saveDetailDoctorServiceAPI,
+    getDetailInforDoctor,
+    saveBulkScheduleDoctorServiceAPI,
+    getScheduleDoctorByDate
 }

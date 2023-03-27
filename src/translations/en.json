@@ -34,6 +34,10 @@
             "manage-specialty": "Specialized Management",
             "handbook": "Handbook",
             "manage-handbook": "Handbook Management"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule",
+            "schedule": "Manage schedule"
         }
     },
     "manage-user": {
@@ -54,5 +58,28 @@
     "homepage": {
         "out-standing-doctor": "Lastweek featured doctor",
         "more": "More Info"
+    },
+    "manage-schedule": {
+        "title": "Manage the doctor's examination plan",
+        "choose-doctor": "Choose a Doctor",
+        "choose-date": "Choose a date",
+        "save-plan": "Save Plan"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Examination Schedule",
+            "no-schedule": "There are no empty appointments during this time. Please choose another time period."
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Create more information doctors",
+            "choose-doctor": "Choose a Doctor",
+            "intro": "Introductory Information",
+            "add": "Create info",
+            "save": "Save info",
+            "price": "Medical price",
+            "note": "Note"
+        }
     }
 }

@@ -34,6 +34,10 @@
             "manage-specialty": "Quản lý Chuyên Khoa",
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lý cẩm nang"
+        },
+        "doctor": {
+            "manage-schedule": "Quản lý kế hoạch khám bệnh",
+            "schedule": "Quản lý đặt lịch"
         }
     },
     "manage-user": {
@@ -54,5 +58,28 @@
     "homepage": {
         "out-standing-doctor": "Bác sĩ nổi bật tuần qua",
         "more": "Xem thêm"
+    },
+    "manage-schedule": {
+        "title": "Quản lý kế hoạch khám bệnh của Bác sỹ",
+        "choose-doctor": "Chọn Bác sỹ",
+        "choose-date": "Chọn ngày",
+        "save-plan": "Lưu kế hoạch"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Lịch khám",
+            "no-schedule": "Không có lịch hẹn trống trong thời gian này. Vui lòng chọn khoản thời gian khác."
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Tạo thông tin trang chi tiết thông tin Bác sĩ",
+            "choose-doctor": "Chọn Bác sỹ",
+            "intro": "Thông tin giới thiệu",
+            "add": "Tạo thông tin",
+            "save": "Lưu thông tin",
+            "price": "Giá khám bệnh",
+            "note": "Ghi chú"
+        }
     }
 }
