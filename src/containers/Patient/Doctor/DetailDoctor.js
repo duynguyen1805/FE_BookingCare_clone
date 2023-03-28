@@ -5,6 +5,7 @@ import './DetailDoctor.scss';
 import { LANGUAGES } from '../../../utils';
 import { getDetailInforDoctor } from '../../../services/userService';
 import DoctorSchedule from './DoctorSchedule';
+import DoctormoreInfo from './DoctormoreInfo';
 
 class DetailDoctor extends Component {
 
@@ -83,7 +84,9 @@ class DetailDoctor extends Component {
                             />
                         </div>
                         <div className='content-right'>
-                            
+                            <DoctormoreInfo 
+                                doctorIdFromParent={this.state.currentDoctorId}
+                            />
                         </div>
                     </div>
                     <div className='detail-infor-doctor'>

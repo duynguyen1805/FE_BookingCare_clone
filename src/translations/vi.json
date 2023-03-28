@@ -69,6 +69,13 @@
         "detail-doctor": {
             "schedule": "Lịch khám",
             "no-schedule": "Không có lịch hẹn trống trong thời gian này. Vui lòng chọn khoản thời gian khác."
+        },
+        "more-infor": {
+            "text-address": "Địa chỉ khám",
+            "price": "Giá khám",
+            "detail": "Xem chi tiết",
+            "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức tiền mặt và quẹt thẻ tại nơi khám.",
+            "hide-price": "Ẩn bảng giá"
         }
     },
     "admin": {

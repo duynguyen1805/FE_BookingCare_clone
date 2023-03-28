@@ -69,6 +69,13 @@
         "detail-doctor": {
             "schedule": "Examination Schedule",
             "no-schedule": "There are no empty appointments during this time. Please choose another time period."
+        },
+        "more-infor": {
+            "text-address": "Address of examination",
+            "price": "Examination price",
+            "detail": "See details",
+            "payment": "Patients can pay in cash and by swiping their card at the clinic.",
+            "hide-price": "Hide price list"
         }
     },
     "admin": {

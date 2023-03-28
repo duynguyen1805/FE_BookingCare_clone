@@ -157,22 +157,50 @@ class ManageDoctor extends Component {
 
     handleChangeSelect = async (selectedOption) => {
         this.setState({ selectedOption });
+        let {listPrice} = this.state
 
         let res = await getDetailInforDoctor(selectedOption.value)
         if(res && res.errCode === 0 && res.data && res.data.Markdown){
             let Markdown = res.data.Markdown;
+
+            let priceId ='', paymentId='', provinceId='', nameClinic='', addressClinic='', note='', selectedPrice=''
+
+            if(res.data.Doctor_Infor){
+                // paymentId= res.data.Doctor_Infor.paymentId;
+                // provinceId = res.data.Doctor_Infor.provinceId;
+                nameClinic =res.data.Doctor_Infor.nameClinic;
+                addressClinic = res.data.Doctor_Infor.addressClinic;
+                note = res.data.Doctor_Infor.note;
+
+                priceId = res.data.Doctor_Infor.priceId;
+
+                selectedPrice = listPrice.find(item => {
+                    return item && item.value === priceId
+                })
+            }
+
+
+
             this.setState({
                 contentHTML: Markdown.contentHTML,
                 contentMarkdown: Markdown.contentMarkdown,
                 description: Markdown.description,
                 hasOldData:true,
+                nameClinic: nameClinic,
+                addressClinic: addressClinic,
+                note: note,
+                selectedPrice: selectedPrice
             })
         }else{
             this.setState({
                 contentHTML: '',
                 contentMarkdown: '',
                 description: '',
-                hasOldData: false
+                hasOldData: false,
+                nameClinic:'',
+                addressClinic: '',
+                note: '',
+                selectedPrice: ''
             })
         }
         // console.log(`Option selected:`, this.state.selectedOption)
@@ -207,7 +235,7 @@ class ManageDoctor extends Component {
     }
 
     render() {
-        // console.log("allDoctors render: ", this.state);
+        // console.log("state manage doctor: ", this.state);
 
         let {hasOldData} = this.state;
         return (
