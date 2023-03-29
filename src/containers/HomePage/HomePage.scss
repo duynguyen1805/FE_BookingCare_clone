@@ -63,7 +63,6 @@
             .bg-image {
                 height: 200px;
                 width: 278px;
-                background: url('../../assets/specialty/specialty-1.png');
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -71,16 +70,38 @@
                 margin-left: 18%;
 
                 &.section-doctor {
-                    // background-image: url('../../assets/doctor/doctor.jpg');
                     height: 140px;
                     width: 140px;
                     border-radius: 50%;
                 }
             }
 
+            .bg-image-spec{
+                height: 200px;
+                width: 278px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+                margin-left: 30%;
+
+                &.section-spec {
+                    height: 160px;
+                    width: 260px;
+                    // border-radius: 50%;
+                }
+            }
+
             .sub-title {
                 margin-top: 5px;
                 margin-left: 20%;
+                font-size: 20px;
+            }
+
+            .sub-title-spec {
+                margin-top: 10px;
+                margin-left: 40%;
+                font-size: 26px;
             }
         }
 

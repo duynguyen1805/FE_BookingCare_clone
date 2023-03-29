@@ -18,12 +18,21 @@ class HomePage extends Component {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
+
+          };
+          let settings_spec = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
           };
 
         return (
             <div>
                 <HomeHeader isShowBanner={true}/>
-                <Specialty settings = {settings}/>
+                <Specialty settings = {settings_spec}/>
                 <Doctor settings = {settings}/>
             </div>
         );

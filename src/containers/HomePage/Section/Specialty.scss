@@ -1,0 +1,28 @@
+.specialty-child {
+    cursor: pointer;
+
+    .bg-image-spec{
+        height: 300px;
+        width: 500px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #eee;
+        margin-left: 20%;
+
+        &.section-specialty{
+            height: 140px;
+            width: 200px;
+        }
+    }
+
+
+    .specialty-name {
+        padding: 10px 0;
+        margin-top: 5px;
+
+        &:hover {
+            color: #0071ba;
+        }
+    }
+}
