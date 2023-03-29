@@ -55,11 +55,10 @@
     }
 
     .section-item {
-
+        
         .section-customize {
             cursor: pointer;
-
-
+            border: rgb(15, 14, 14) solid 2px;
             .bg-image {
                 height: 200px;
                 width: 278px;
@@ -68,19 +67,19 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: #eee;
-                margin-left: 18%;
+                //margin-left: 18%;
 
                 &.section-doctor {
                     // background-image: url('../../assets/doctor/doctor.jpg');
                     height: 140px;
                     width: 140px;
-                    border-radius: 50%;
+                    //border-radius: 50%;
                 }
             }
 
             .sub-title {
                 margin-top: 5px;
-                margin-left: 20%;
+                //margin-left: 20%;
             }
         }
 
@@ -92,9 +91,9 @@
     height: 330px;
 
     .section-container {
-        margin: 0 100px;
-        display: flex;
-        flex-direction: column;
+        margin: 0 70px;
+        // display: flex;
+        // flex-direction: column;
 
         .section-header {
             height: 60px;
@@ -132,5 +131,6 @@
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
+        
     }
 }
