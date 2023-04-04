@@ -24,6 +24,7 @@ class DetailDoctor extends Component {
 
     render() {
         
+        
         return (
             <>
                 

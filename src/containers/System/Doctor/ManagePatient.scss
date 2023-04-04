@@ -1,0 +1,20 @@
+.manage-patient-container {
+  .manage-patient-body {
+    padding: 0 20px;
+
+    .table-manage-patient {
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 5px;
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,92 +1,109 @@
 {
-    "home-header": {
-        "speciality": "Chuyên Khoa",
-        "searchdoctor": "Tìm bác sỹ theo chuyên khoa",
-        "health-facility": "Cơ sở y tế",
-        "select-room": "Chọn bệnh viện phòng khám",
-        "doctor": "Bác sỹ",
-        "select-doctor": "Chọn bác sỹ",
-        "fee": "Gói khám",
-        "check-health": "Khám sức khỏe tổng quát",
-        "support": "Hỗ trợ",
-        "welcome": "Xin chào, "
-    },
-    "banner": {
-        "title-1": "NỀN TẢNG Y TẾ",
-        "title-2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
-        "text-1": "Khám chuyên khoa",
-        "text-2": "Khám từ xa",
-        "text-3": "Khám tổng quát",
-        "text-4": "Khám y học",
-        "text-5": "Sức khỏe tinh thần",
-        "text-6": "Khám nha khoa"
-    },
-    "menu": {
-        "admin": {
-            "manage-user": "Quản lý người dùng",
-            "manage-doctor": "Quản lý bác sĩ",
-            "manage-admin": "Quản lý admin",
-            "crud": "CRUD user",
-            "crud-redux": "CRUD redux",
-            "clinic": "Phòng khám",
-            "manage-clinic": "Quản lý phòng khám",
-            "specialty": "Chuyên Khoa",
-            "manage-specialty": "Quản lý Chuyên Khoa",
-            "handbook": "Cẩm nang",
-            "manage-handbook": "Quản lý cẩm nang"
-        },
-        "doctor": {
-            "manage-schedule": "Quản lý kế hoạch khám bệnh",
-            "schedule": "Quản lý đặt lịch"
-        }
-    },
-    "manage-user": {
-        "add": "Thêm người dùng",
-        "email": "Email",
-        "password": "Mật khẩu",
-        "first-Name": "Tên",
-        "last-Name": "Họ",
-        "address": "Địa chỉ",
-        "phone": "Số điện thoại",
-        "gender": "Giới tính",
-        "position": "Chức danh",
-        "role": "Vai trò",
-        "image": "Ảnh đại diện",
-        "save": "Lưu",
-        "edit": "Lưu chỉnh sửa"
-    },
-    "homepage": {
-        "out-standing-doctor": "Bác sĩ nổi bật tuần qua",
-        "more": "Xem thêm"
-    },
-    "manage-schedule": {
-        "title": "Quản lý kế hoạch khám bệnh của Bác sỹ",
-        "choose-doctor": "Chọn Bác sỹ",
-        "choose-date": "Chọn ngày",
-        "save-plan": "Lưu kế hoạch"
-    },
-    "patient": {
-        "detail-doctor": {
-            "schedule": "Lịch khám",
-            "no-schedule": "Không có lịch hẹn trống trong thời gian này. Vui lòng chọn khoản thời gian khác."
-        },
-        "more-infor": {
-            "text-address": "Địa chỉ khám",
-            "price": "Giá khám",
-            "detail": "Xem chi tiết",
-            "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức tiền mặt và quẹt thẻ tại nơi khám.",
-            "hide-price": "Ẩn bảng giá"
-        }
-    },
+  "home-header": {
+    "speciality": "Chuyên Khoa",
+    "searchdoctor": "Tìm bác sỹ theo chuyên khoa",
+    "health-facility": "Cơ sở y tế",
+    "select-room": "Chọn bệnh viện phòng khám",
+    "doctor": "Bác sỹ",
+    "select-doctor": "Chọn bác sỹ",
+    "fee": "Gói khám",
+    "check-health": "Khám sức khỏe tổng quát",
+    "support": "Hỗ trợ",
+    "welcome": "Xin chào, "
+  },
+  "banner": {
+    "title-1": "NỀN TẢNG Y TẾ",
+    "title-2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+    "text-1": "Khám chuyên khoa",
+    "text-2": "Khám từ xa",
+    "text-3": "Khám tổng quát",
+    "text-4": "Khám y học",
+    "text-5": "Sức khỏe tinh thần",
+    "text-6": "Khám nha khoa"
+  },
+  "menu": {
     "admin": {
-        "manage-doctor": {
-            "title": "Tạo thông tin trang chi tiết thông tin Bác sĩ",
-            "choose-doctor": "Chọn Bác sỹ",
-            "intro": "Thông tin giới thiệu",
-            "add": "Tạo thông tin",
-            "save": "Lưu thông tin",
-            "price": "Giá khám bệnh",
-            "note": "Ghi chú"
-        }
+      "manage-user": "Quản lý người dùng",
+      "manage-doctor": "Quản lý bác sĩ",
+      "manage-admin": "Quản lý admin",
+      "crud": "CRUD user",
+      "crud-redux": "CRUD redux",
+      "clinic": "Phòng khám",
+      "manage-clinic": "Quản lý phòng khám",
+      "specialty": "Chuyên Khoa",
+      "manage-specialty": "Quản lý Chuyên Khoa",
+      "handbook": "Cẩm nang",
+      "manage-handbook": "Quản lý cẩm nang"
+    },
+    "doctor": {
+      "manage-schedule": "Quản lý kế hoạch khám bệnh",
+      "manage-patient": "Quản lý bệnh nhân khám bệnh",
+      "schedule": "Quản lý đặt lịch"
     }
+  },
+  "manage-user": {
+    "add": "Thêm người dùng",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "first-Name": "Tên",
+    "last-Name": "Họ",
+    "address": "Địa chỉ",
+    "phone": "Số điện thoại",
+    "gender": "Giới tính",
+    "position": "Chức danh",
+    "role": "Vai trò",
+    "image": "Ảnh đại diện",
+    "save": "Lưu",
+    "edit": "Lưu chỉnh sửa"
+  },
+  "homepage": {
+    "out-standing-doctor": "Bác sĩ nổi bật tuần qua",
+    "more": "Xem thêm"
+  },
+  "manage-schedule": {
+    "title": "Quản lý kế hoạch khám bệnh của Bác sỹ",
+    "choose-doctor": "Chọn Bác sỹ",
+    "choose-date": "Chọn ngày",
+    "save-plan": "Lưu kế hoạch"
+  },
+  "patient": {
+    "detail-doctor": {
+      "schedule": "Lịch khám",
+      "no-schedule": "Không có lịch hẹn trống trong thời gian này. Vui lòng chọn khoản thời gian khác."
+    },
+    "more-infor": {
+      "text-address": "Địa chỉ khám",
+      "price": "Giá khám: ",
+      "detail": "Xem chi tiết",
+      "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức tiền mặt và quẹt thẻ tại nơi khám.",
+      "hide-price": "Ẩn bảng giá"
+    },
+    "booking-modal": {
+      "title": "Thông tin đặt lịch khám bệnh",
+      "fullname": "Họ và tên người đến khám",
+      "phonenumber": "Số điện thoại",
+      "email": "Địa chỉ email",
+      "address": "Địa chỉ",
+      "reason": "Lý do khám",
+      "birthday": "Ngày sinh",
+      "gender": "Giới tính",
+      "btnconfirm": "Xác nhận",
+      "btncancel": "Hủy",
+      "priceBooking": "Miễn phí đặt lịch",
+      "price": "Giá khám: ",
+      "noti": "* Thông báo xác nhận đặt lịch thành công sẽ được gửi về địa chỉ Email !"
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Tạo thông tin trang chi tiết thông tin Bác sĩ",
+      "choose-doctor": "Chọn Bác sỹ",
+      "intro": "Thông tin giới thiệu",
+      "add": "Tạo thông tin",
+      "save": "Lưu thông tin",
+      "price": "Giá khám bệnh ",
+      "note": "Ghi chú",
+      "specialty": "Chuyên Khoa"
+    }
+  }
 }
