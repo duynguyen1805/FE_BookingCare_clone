@@ -1,0 +1,254 @@
+h2{
+    margin-top: 30px;
+}
+.thietbi{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 50px;
+    background: #f5f5f5;
+    .thietbi-item{
+        //border: firebrick solid 2px;
+        padding: 0;
+        .tb{
+            height: 520px;
+            width: 282px;
+            margin: auto;
+            //border: forestgreen solid 2px;
+            .item1{
+                margin: 10px 0px;
+                img{
+                    width: 282px;
+                    height: 200px;
+                }
+            }
+            .item2{
+                margin: 10px 0px;
+
+                img{
+                    width: 282px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1275px ){
+    .thietbi{
+        padding: 30px 20px;
+
+        .thietbi-item{
+            //border: firebrick solid 2px;
+            padding: 0;
+            .tb{
+                height: 520px;
+                width: 252px;
+                margin: auto;
+                //border: forestgreen solid 2px;
+                .item1{
+                    margin: 10px 0px;
+                    img{
+                        width: 252px;
+                        height: 200px;
+                    }
+                }
+                .item2{
+                    margin: 10px 0px;
+    
+                    img{
+                        width: 252px;
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1095px ){
+    .thietbi{
+        .thietbi-item{
+            .tb{
+                height: 420px;
+                width: 202px;
+                margin: auto;
+                //border: forestgreen solid 2px;
+                .item1{
+                    img{
+                        width: 202px;
+                        height: 150px;
+                    }
+                }
+                .item2{    
+                    img{
+                        width: 202px;
+                        height: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 890px ){
+    .thietbi{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 20px;
+        .thietbi-item{
+            width: 260px;
+            margin: auto;
+            .tb{
+                height: 420px;
+                width: 252px;
+                .item1{
+                    img{
+                        width: 252px;
+                        height: 150px;
+                        
+                    }
+                }
+                .item2{
+                    img{
+                        width: 252px;
+                        height: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 570px){
+    .thietbi{
+
+        .thietbi-item{
+            width: 210px;
+            margin: auto;
+            .tb{
+                height: 420px;
+                width: 202px;
+                .item1{
+                    img{
+                        width: 202px;
+                        height: 150px;
+                        
+                    }
+                }
+                .item2{
+                    img{
+                        width: 202px;
+                        height: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 576px){
+    .col-sm-3 {
+    //flex: 0 0 25%;
+    max-width: 100%;
+    }
+}
+// @media (max-width: 1270px ){
+//     .thietbi{
+//         padding: 30px 20px;
+//         .thietbi-item{
+            
+//             .tb{
+//                 height: 520px;
+//                 width: 252px;
+//                 margin: auto;
+//                 .item1{
+//                     img{
+//                         width: 252px;
+//                         height: 200px;
+//                     }
+//                 }
+//                 .item2{
+//                     img{
+//                         width: 252px;
+//                         height: 300px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media (max-width: 1090px ){
+//     .thietbi{
+//         padding: 30px 20px;
+//         .thietbi-item{
+            
+//             .tb{
+//                 height: 420px;
+//                 width: 202px;
+//                 margin: auto;
+//                 .item1{
+//                     img{
+//                         width: 202px;
+//                         height: 150px;
+//                     }
+//                 }
+//                 .item2{
+//                     img{
+//                         width: 202px;
+//                         height: 250px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media (max-width: 870px ){
+//     .thietbi{
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         padding: 30px 20px;
+//         .thietbi-item{
+//             width: 260px;
+//             margin: auto;
+//             .tb{
+//                 height: 420px;
+//                 width: 252px;
+//                 margin: auto;
+//                 .item1{
+//                     img{
+//                         width: 252px;
+//                         height: 150px;
+                        
+//                     }
+//                 }
+//                 .item2{
+//                     img{
+//                         width: 252px;
+//                         height: 250px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media (max-width: 550px ){
+//     .thietbi{
+//         .thietbi-item{
+//             width: 210px;
+//             margin: auto;
+//             .tb{
+//                 height: 420px;
+//                 width: 202px;
+//                 margin: auto;
+//                 .item1{
+//                     img{
+//                         width: 202px;
+//                         height: 150px;
+                        
+//                     }
+//                 }
+//                 .item2{
+//                     img{
+//                         width: 202px;
+//                         height: 250px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

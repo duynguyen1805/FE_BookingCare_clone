@@ -1,0 +1,51 @@
+.container-fluid{
+    height: 230px;
+
+    .row{
+        text-align: left;
+        padding: 0px 30px;
+        img{
+            width: 200px;
+            height: 44px;
+        }
+        .row-item{
+            padding: 0px 50px;
+            height: 230px;
+            i{
+                font-size: 30px;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+                &:hover{
+                    color: #45c3d2;
+                }
+            }
+            .list-unstyled{
+                a{
+                    color: rgb(76, 182, 182);
+                    line-height: 25px;
+                }
+                
+            }
+        }
+        .icons{
+            img{
+                width: 130px;
+                height: 32px;
+            }
+            
+        }
+    }
+}
+@media (max-width: 773px ){
+    .container-fluid{
+        .row{
+            .row-item{
+                .list-unstyled{
+                    padding: 20px 0px;
+                }
+            }
+        }
+    }
+}

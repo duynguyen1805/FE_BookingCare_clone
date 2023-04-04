@@ -64,9 +64,8 @@ class Doctor extends Component {
                                     let nameVI = `${item.positionData.valueVI}, ${item.lastName}, ${item.firstName}`;
                                     let nameEN = `${item.positionData.valueEN}, ${item.firstName}, ${item.lastName}`;
                                     return(
-                                        <div className='section-customize' key={index} onClick= {() => {
-                                            this.handleViewDetailDoctor(item)
-                                        }}>
+                                        <div className='section-customize customize-doctor' key={index} onClick= {() => {
+                                            this.handleViewDetailDoctor(item)}}>
                                             <div className='outer-bg'>
                                                 <div className='bg-image section-doctor'
                                                     style={{backgroundImage: `url(${imageBase64})`}}

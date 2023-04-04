@@ -23,14 +23,14 @@ export const adminMenu = [
             }
         ]
     },
-    { //quan ly phong kham
-        name: 'menu.admin.clinic',
-        menus: [
-            {
-                name: 'menu.admin.manage-clinic', link: '/system/manage-clinic',
-            }
-        ]
-    },
+    // { //quan ly phong kham
+    //     name: 'menu.admin.clinic',
+    //     menus: [
+    //         {
+    //             name: 'menu.admin.manage-clinic', link: '/system/manage-clinic',
+    //         }
+    //     ]
+    // },
     { //quan ly chuyen khoa
         name: 'menu.admin.specialty',
         menus: [
@@ -39,14 +39,14 @@ export const adminMenu = [
             }
         ]
     },
-    { //quan ly cam nang
-        name: 'menu.admin.handbook',
-        menus: [
-            {
-                name: 'menu.admin.manage-handbook', link: '/system/manage-handbook',
-            }
-        ]
-    },
+    // { //quan ly cam nang
+    //     name: 'menu.admin.handbook',
+    //     menus: [
+    //         {
+    //             name: 'menu.admin.manage-handbook', link: '/system/manage-handbook',
+    //         }
+    //     ]
+    // },
 ];
 
 export const doctorMenu = [

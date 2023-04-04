@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
+// import "./Specialty.scss"
 import Slider from 'react-slick';
+import {getAllSpecialtyServiceAPI} from '../../../services/userService'
 
 class Specialty extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSpecialty: []
+        }
+    }
+
+    async componentDidMount() {
+        let res = await getAllSpecialtyServiceAPI();
+        if(res && res.errCode === 0){
+            this.setState({
+                dataSpecialty: res.data ? res.data : []
+            })
+        }
+    }
+
 
     render() {
+
+        let {dataSpecialty} = this.state
 
         return (
             <div className='section-share section-specialty'>
@@ -18,30 +37,22 @@ class Specialty extends Component {
                     </div>
                     <div className='section-item'>
                         <Slider {...this.props.settings}>
-                            <div className='section-customize'>
-                                <div className='bg-image'></div>
-                                <div className='sub-title'>Specialy item 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image'></div>
-                                <div className='sub-title'>Specialy item 2</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image'></div>
-                                <div className='sub-title'>Specialy item 3</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image'></div>
-                                <div className='sub-title'>Specialy item 4</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image'></div>
-                                <div className='sub-title'>Specialy item 5</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image'></div>
-                                <div className='sub-title'>Specialy item 6</div>
-                            </div>
+                            {dataSpecialty && dataSpecialty.length > 0 
+                                && dataSpecialty.map((item,index) => {
+                                    return (
+                                        <div className='section-customize customize-spec' key={index}>
+                                            <div className='outer-bg'>
+                                                <div className='bg-image-spec section-spec'
+                                                    style={{ backgroundImage: `url(${item.image})`}}
+                                                ></div>
+                                            </div>
+                                            
+                                            <div className='sub-title-spec'>{item.name}</div>
+                                        </div>
+                                    )
+                                })
+                            }
+                            
                         </Slider>
                     </div>
                     
