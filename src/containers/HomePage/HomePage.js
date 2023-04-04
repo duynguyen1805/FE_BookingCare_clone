@@ -8,32 +8,98 @@ import './HomePage.scss';
 //import css file Slider
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import GiaTriKhacBiet from './Section/GiaTriKhacBiet';
+import SoLuong from './Section/SoLuong';
+import ThietBi from './Section/ThietBi';
+import Footer from './Section/Footer';
 class HomePage extends Component {
 
     render() {
-        let settings = {
-            dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-
-          };
-          let settings_spec = {
-            dots: false,
+        var settings = {
+            dots: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
-            autoplay: true,
-          };
+            responsive:[
+                {
+                    breakpoint:1024,
+                    settings:{
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint:700,
+                    settings:{
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint:530,
+                    settings:{
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+            ]
+        };
+
+        var settings_spec = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            initialSlide: 0,
+            autoplay:true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                    }
+                },
+                {
+                    breakpoint: 530,
+                    settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                    }
+                },
+            ]
+        };
 
         return (
             <div>
                 <HomeHeader isShowBanner={true}/>
                 <Specialty settings = {settings_spec}/>
                 <Doctor settings = {settings}/>
+                <GiaTriKhacBiet/>
+                <SoLuong/>
+                <ThietBi/>
+                <Footer/>
             </div>
         );
     }

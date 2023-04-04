@@ -45,77 +45,107 @@
 
 .section-share {
     &.section-specialty {
+        height: 350px;
         width: 100vw;
         background: #f5f5f5;
-    }
 
-    &.section-doctor {
-        width: 100vw;
-        background: #ece4e4;
     }
 
     .section-item {
-
+        //border: rgb(15, 14, 14) solid 2px;
+        //width: 100vw;
         .section-customize {
             cursor: pointer;
+            
+            &.customize-spec{
+                //border: rgb(236, 11, 11) solid 2px;
 
-
-            .bg-image {
-                height: 200px;
-                width: 278px;
+                //width: 235px;
+                height: 210px;
+                //margin: auto;
+            }
+            
+            .bg-image-spec{
+                //border: greenyellow solid 2px;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: #eee;
-                margin-left: 18%;
+                //margin-left: 30%;
+
+                &.section-spec {
+                    border: #f7d800 solid 2px;
+                    height: 160px;
+                    width: 160px;
+                    margin: auto;
+                    border-radius: 5% 5% 5% 5%;
+                }
+            }
+            &.customize-doctor{
+                //border: rgb(44, 7, 212) solid 2px;
+
+            }
+            .bg-image { //bác sĩ img
+                // height: 200px;
+                // width: 278px;
+                border: firebrick solid 3px;
+
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eeeeee;
+                //margin-left: 18%;
 
                 &.section-doctor {
-                    height: 140px;
-                    width: 140px;
+
+                   height: 160px;
+                    width: 160px;
                     border-radius: 50%;
                 }
             }
 
-            .bg-image-spec{
-                height: 200px;
-                width: 278px;
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-color: #eee;
-                margin-left: 30%;
 
-                &.section-spec {
-                    height: 160px;
-                    width: 260px;
-                    // border-radius: 50%;
-                }
-            }
+
 
             .sub-title {
                 margin-top: 5px;
-                margin-left: 20%;
                 font-size: 20px;
+                text-align: center;
             }
 
             .sub-title-spec {
                 margin-top: 10px;
-                margin-left: 40%;
-                font-size: 26px;
+                //margin-left: 40%;
+                font-size: 23px;
+                text-align: center;
             }
         }
 
     }
 
 }
+            // .bg-image-spec{
+            //     height: 200px;
+            //     width: 278px;
+            //     background-position: center center;
+            //     background-repeat: no-repeat;
+            //     background-size: cover;
+            //     background-color: #eee;
+            //     //margin-left: 30%;
 
+            //     &.section-spec {
+            //         height: 160px;
+            //         width: 260px;
+            //         // border-radius: 50%;
+            //     }
+            // }
 .section-share {
     height: 330px;
 
     .section-container {
-        margin: 0 100px;
-        display: flex;
-        flex-direction: column;
+        margin: 0 70px;
+        // display: flex;
+        // flex-direction: column;
 
         .section-header {
             height: 60px;
@@ -153,5 +183,6 @@
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
+        
     }
 }
