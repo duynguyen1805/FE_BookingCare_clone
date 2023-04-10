@@ -3,10 +3,10 @@ export const adminMenu = [
     //quan ly nguoi dung
     name: "menu.admin.manage-user",
     menus: [
-      {
-        name: "menu.admin.crud",
-        link: "/system/user-manage",
-      },
+      // {
+      //   name: "menu.admin.crud",
+      //   link: "/system/user-manage",
+      // },
       {
         name: "menu.admin.crud-redux",
         link: "/system/user-redux",
@@ -62,11 +62,11 @@ export const doctorMenu = [
     //quan ly ke hoach kham benh cua bac sy
     name: "menu.admin.manage-user",
     menus: [
-      {
-        //quan ly ke hoach kham benh cua bac sy
-        name: "menu.doctor.manage-schedule",
-        link: "/doctor/manage-schedule",
-      },
+      // {
+      //   //quan ly ke hoach kham benh cua bac sy
+      //   name: "menu.doctor.manage-schedule",
+      //   link: "/doctor/manage-schedule",
+      // },
       {
         //quan ly ke hoach kham benh cua bac sy
         name: "menu.doctor.manage-patient",

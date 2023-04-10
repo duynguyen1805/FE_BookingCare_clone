@@ -17,7 +17,8 @@ import Home from "../routes/Home";
 import Login from "./Auth/Login";
 import System from "../routes/System";
 import HomePage from "./HomePage/HomePage.js";
-import Detail from "./Detail/Detail";
+import AllSpec from "./Detail/AllSpec";
+import AllDoctor from "./Detail/AllDoctor";
 import Doctor from "../routes/Doctor";
 import DetailDoctor from "./Patient/Doctor/DetailDoctor";
 import DetailSpecialty from "./Patient/Specialty/DetailSpecialty";
@@ -67,7 +68,8 @@ class App extends Component {
                     component={userIsAuthenticated(Doctor)}
                   />
                   <Route path={path.HOMEPAGE} component={HomePage} />
-                  <Route path={path.DETAIL} component={Detail} />
+                  <Route path={path.AllSPEC} component={AllSpec} />
+                  <Route path={path.AllDOCTOR} component={AllDoctor} />
                   <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                   <Route
                     path={path.DETAIL_SPECIALTY}

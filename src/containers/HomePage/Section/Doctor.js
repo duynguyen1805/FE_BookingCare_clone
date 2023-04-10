@@ -36,6 +36,12 @@ class Doctor extends Component {
     }
   };
 
+  returntoAllDoctor = () => {
+    if (this.props.history) {
+      this.props.history.push(`/all-doctor`);
+    }
+  };
+
   render() {
     let arrDoctors = this.state.arrDoctors;
     let language = this.props.language;
@@ -49,7 +55,7 @@ class Doctor extends Component {
             <span className="title-section">
               <FormattedMessage id="homepage.out-standing-doctor" />
             </span>
-            <button className="btn-section">
+            <button className="btn-section" onClick={this.returntoAllDoctor}>
               <FormattedMessage id="homepage.more" />
             </button>
           </div>
@@ -84,7 +90,9 @@ class Doctor extends Component {
                         <div className="sub-title">
                           {language === LANGUAGES.VI ? nameVI : nameEN}
                         </div>
-                        <div className="sub-title">Cơ xương khớp</div>
+                        <div className="sub-title">
+                          {item.Doctor_Infor.specialtyData.name}
+                        </div>
                       </div>
                     </div>
                   );

@@ -27,7 +27,7 @@
       "manage-doctor": "Doctor Management",
       "manage-admin": "Admin Management",
       "crud": "CRUD user",
-      "crud-redux": "CRUD redux",
+      "crud-redux": "Account Management",
       "clinic": "Clinic",
       "manage-clinic": "Clinic Management",
       "specialty": "Specialty",
@@ -91,7 +91,7 @@
       "btncancel": "Cancel",
       "priceBooking": "Free booking",
       "price": "Price: ",
-      "noti": "* Confirmation of successful booking will be sent to your email address!"
+      "noti": "* Notice of booking confirmation will be sent to Email address. Please check your email for confirmation."
     }
   },
   "admin": {

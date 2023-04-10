@@ -1,3 +1,11 @@
+div._loading_overlay_wrapper {
+  position: unset;
+
+  ._loading_overlay_overlay {
+    z-index: 1000000;
+  }
+}
+
 .manage-patient-container {
   .manage-patient-body {
     padding: 0 20px;
@@ -14,6 +22,25 @@
       td {
         padding: 5px;
         text-align: left;
+      }
+
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .mp-btn-confirm {
+        margin-right: 10px;
+        height: 30px;
+        border-radius: 3px;
+        background: #ebce2e;
+      }
+
+      .mp-btn-remedy {
+        height: 30px;
+        border-radius: 3px;
+        background: #39dca0;
       }
     }
   }

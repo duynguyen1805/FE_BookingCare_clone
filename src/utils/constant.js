@@ -4,7 +4,8 @@ export const path = {
   LOGIN: "/login",
   LOG_OUT: "/logout",
   SYSTEM: "/system",
-  DETAIL: "/detail",
+  AllSPEC: "/all-specialty",
+  AllDOCTOR: "/all-doctor",
   DOCTOR: "/doctor",
   DETAIL_DOCTOR: "/detail-doctor/:id",
   DETAIL_SPECIALTY: "/detail-specialty/:id",
@@ -21,6 +22,7 @@ export const CRUD_ACTION = {
   EDIT: "EDIT",
   DELETE: "DELETE",
   READ: "READ",
+  HIDE_USER: "HIDE_USER",
 };
 
 export const dateFormat = {

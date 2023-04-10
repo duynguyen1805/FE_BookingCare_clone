@@ -27,7 +27,7 @@
       "manage-doctor": "Quản lý bác sĩ",
       "manage-admin": "Quản lý admin",
       "crud": "CRUD user",
-      "crud-redux": "CRUD redux",
+      "crud-redux": "Quản lý tài khoản",
       "clinic": "Phòng khám",
       "manage-clinic": "Quản lý phòng khám",
       "specialty": "Chuyên Khoa",
@@ -91,7 +91,7 @@
       "btncancel": "Hủy",
       "priceBooking": "Miễn phí đặt lịch",
       "price": "Giá khám: ",
-      "noti": "* Thông báo xác nhận đặt lịch thành công sẽ được gửi về địa chỉ Email !"
+      "noti": "* Thông báo xác nhận đặt lịch sẽ được gửi về địa chỉ Email. Vui lòng kiểm tra Email để xác nhận."
     }
   },
   "admin": {

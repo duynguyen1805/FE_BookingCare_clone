@@ -29,6 +29,12 @@ class Specialty extends Component {
     }
   };
 
+  handleMoreInfo = () => {
+    if (this.props.history) {
+      this.props.history.push(`/all-specialty`);
+    }
+  };
+
   render() {
     let { dataSpecialty } = this.state;
 
@@ -37,7 +43,9 @@ class Specialty extends Component {
         <div className="section-container">
           <div className="section-header">
             <span className="title-section">Chuyên khoa phổ biến</span>
-            <button className="btn-section">Xem thêm</button>
+            <button className="btn-section" onClick={this.handleMoreInfo}>
+              Xem thêm
+            </button>
           </div>
           <div className="section-item">
             <Slider {...this.props.settings}>
@@ -53,7 +61,9 @@ class Specialty extends Component {
                       <div className="outer-bg">
                         <div
                           className="bg-image-spec section-spec"
-                          style={{ backgroundImage: `url(${item.image})` }}
+                          style={{
+                            backgroundImage: `url(${item.image})`,
+                          }}
                         ></div>
                       </div>
 

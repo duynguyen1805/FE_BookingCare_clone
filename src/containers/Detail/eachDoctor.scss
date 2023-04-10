@@ -1,0 +1,41 @@
+.container-doctor {
+  height: 100px;
+  box-shadow: 0 1px 6px #20212447;
+  margin-top: 10px;
+  border-radius: 15px;
+
+  .row {
+    height: 100%;
+    cursor: pointer;
+
+    .content-left {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid rgb(194, 187, 187);
+
+      .icon-spec {
+        // background: url("../../assets/doctor/doctor.jpg") no-repeat center;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 80px;
+        width: 80px;
+        border: 1px #0071ba solid;
+        border-radius: 50%;
+      }
+    }
+
+    .content-right {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      font-size: 30px;
+    }
+
+    .spec {
+      font-size: 25px;
+    }
+  }
+}

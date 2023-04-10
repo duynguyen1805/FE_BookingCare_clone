@@ -24,6 +24,14 @@ const DeleteUserServiceAPI = (userId) => {
   });
 };
 
+const DeleteScheduleServiceAPI = (scheduleId) => {
+  return axios.delete("/api/delete-schedule", {
+    data: {
+      id: scheduleId,
+    },
+  });
+};
+
 const EditUserServiceAPI = (dataEdit) => {
   return axios.put("/api/edit-user", dataEdit);
 };
@@ -88,6 +96,21 @@ const getAllDetailSpecialtyById = (data) => {
   );
 };
 
+const getAllPatientForDoctor = (data) => {
+  return axios.get(
+    `/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`
+  );
+};
+
+const postSendRemedy = (data) => {
+  return axios.post(`/api/confirm-arrived`, data);
+};
+
+const getAllSchedule = (inputId) => {
+  //id === "ALL" or id_user
+  return axios.get(`/api/get-all-schedule?id=${inputId}`);
+};
+
 export {
   handleLoginAPI,
   getAllUser,
@@ -108,4 +131,8 @@ export {
   postPatientBookAppointment,
   postVerifyBookAppointment,
   getAllDetailSpecialtyById,
+  getAllPatientForDoctor,
+  postSendRemedy,
+  getAllSchedule,
+  DeleteScheduleServiceAPI,
 };
