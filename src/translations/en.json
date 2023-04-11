@@ -64,6 +64,7 @@
     "title": "Manage the doctor's examination plan",
     "choose-doctor": "Choose a Doctor",
     "choose-date": "Choose a date",
+    "maxNum": "Number of time slots (maximum)",
     "save-plan": "Save Plan"
   },
   "patient": {

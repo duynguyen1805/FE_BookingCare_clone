@@ -64,6 +64,7 @@
     "title": "Quản lý kế hoạch khám bệnh của Bác sỹ",
     "choose-doctor": "Chọn Bác sỹ",
     "choose-date": "Chọn ngày",
+    "maxNum": "Số lượng mỗi khung giờ (tối đa)",
     "save-plan": "Lưu kế hoạch"
   },
   "patient": {

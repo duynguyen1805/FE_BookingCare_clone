@@ -13,6 +13,7 @@ import {
   saveBulkScheduleDoctorServiceAPI,
   getAllSchedule,
   DeleteScheduleServiceAPI,
+  DeleteAllScheduleServiceAPI,
 } from "../../../services/userService";
 
 class ManageSchedule extends Component {
@@ -24,6 +25,7 @@ class ManageSchedule extends Component {
       currentDate: "",
       rangeTime: [],
       arrDoctors: [],
+      maxNum: "",
     };
   }
 
@@ -123,7 +125,7 @@ class ManageSchedule extends Component {
   };
 
   handleSaveSchedule = async () => {
-    let { rangeTime, selectedDoctor, currentDate } = this.state;
+    let { rangeTime, selectedDoctor, currentDate, maxNum } = this.state;
 
     let result = [];
 
@@ -149,7 +151,7 @@ class ManageSchedule extends Component {
           object.doctorId = selectedDoctor.value;
           object.date = formatedDate;
           object.timeType = schedule.keyMap;
-          // object.maxNumber = 10;
+          object.maxNumber = maxNum;
 
           result.push(object);
         });
@@ -163,6 +165,7 @@ class ManageSchedule extends Component {
       arrSchedule: result,
       doctorId: selectedDoctor.value,
       formatedDate: formatedDate,
+      maxNumber: maxNum,
     });
 
     if (res && res.errCode === 0) {
@@ -170,7 +173,7 @@ class ManageSchedule extends Component {
     } else {
       toast.error("Error saveBulkScheduleDoctorServiceAPI => res: ", res);
     }
-    // console.log("check res:saveBulkScheduleDoctorServiceAPI ", res);
+    console.log("check res:saveBulkScheduleDoctorServiceAPI ", res);
     // console.log("check result: ", result);
   };
 
@@ -189,11 +192,35 @@ class ManageSchedule extends Component {
     }
   };
 
+  handleDeleteScheduleForDay = async () => {
+    //console.log("check input ob user handleDelete: ", user); //>>> return ob{}
+    try {
+      let respone = await DeleteAllScheduleServiceAPI(Date.now() * 1000);
+      console.log("check respone delete user: ", respone);
+      if (respone && respone.errCode !== 0) {
+        alert(respone.errMessage);
+      } else {
+        await this.getAllUsersFromReact(this.state.selectedDoctor.value);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  handleOnChangeInput = (event, id) => {
+    let copyState = { ...this.state }; //khong modify truc tiep thay the bang copyState
+    copyState[id] = event.target.value;
+
+    this.setState({
+      ...copyState,
+    });
+  };
+
   render() {
     // console.log('check state: ', this.state.rangeTime);
     console.log("check props: ", this.state);
 
-    let { rangeTime } = this.state;
+    let { rangeTime, maxNum } = this.state;
     let { language } = this.props;
     let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     let arrDoctor = this.state.arrDoctors;
@@ -206,7 +233,7 @@ class ManageSchedule extends Component {
           </div>
           <div className="container mt-4">
             <div className="row">
-              <div className="col-6 form-group">
+              <div className="col-5 form-group">
                 <label>
                   <FormattedMessage id="manage-schedule.choose-doctor" />
                 </label>
@@ -216,7 +243,7 @@ class ManageSchedule extends Component {
                   options={this.state.listDoctors}
                 />
               </div>
-              <div className="col-6 form-group">
+              <div className="col-4 form-group">
                 <label>
                   <FormattedMessage id="manage-schedule.choose-date" />
                 </label>
@@ -225,6 +252,20 @@ class ManageSchedule extends Component {
                   className="form-control"
                   value={this.state.currentDate[0]}
                   minDate={yesterday}
+                />
+              </div>
+              <div className="col-3 form-group">
+                <label>
+                  <FormattedMessage id="manage-schedule.maxNum" />
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="maxNum"
+                  onChange={(event) => {
+                    this.handleOnChangeInput(event, "maxNum");
+                  }}
+                  value={maxNum}
                 />
               </div>
               <div className="col-12 pick-hour-container">
@@ -248,13 +289,23 @@ class ManageSchedule extends Component {
                     );
                   })}
               </div>
-              <div className="col-12">
-                <button
-                  className="btn btn-primary btn-save-schedule mt-4"
-                  onClick={() => this.handleSaveSchedule()}
-                >
-                  <FormattedMessage id="manage-schedule.save-plan" />
-                </button>
+              <div className="row ml-1">
+                <div className="col-4">
+                  <button
+                    className="btn btn-primary btn-save-schedule mt-4"
+                    onClick={() => this.handleSaveSchedule()}
+                  >
+                    <FormattedMessage id="manage-schedule.save-plan" />
+                  </button>
+                </div>
+                <div className="col-7">
+                  <button
+                    className="btn btn-primary btn-save-schedule mt-4"
+                    onClick={() => this.handleDeleteScheduleForDay()}
+                  >
+                    Xóa kế hoạch lịch hôm nay
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -267,6 +318,8 @@ class ManageSchedule extends Component {
                 <th>ID Bác sĩ</th>
                 <th>Ngày</th>
                 <th>Thời gian</th>
+                <th>Số lượng tối đa</th>
+                <th>Số lượng hiện tại</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -292,6 +345,8 @@ class ManageSchedule extends Component {
                       <td>{item.doctorId}</td>
                       <td>{date}</td>
                       <td>{time.valueVI}</td>
+                      <td>{item.maxNumber}</td>
+                      <td>{item.currentNumber}</td>
                       <td>
                         <button
                           className="btn-delete"

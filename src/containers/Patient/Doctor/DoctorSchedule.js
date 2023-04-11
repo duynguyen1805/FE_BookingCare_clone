@@ -98,25 +98,44 @@ class DoctorSchedule extends Component {
     }
   }
 
+  getDataSchedule = async (doctorId, date) => {
+    let res = await getScheduleDoctorByDate(doctorId, date);
+
+    if (res && res.errCode === 0) {
+      this.setState({
+        allAvalableTime: res.data ? res.data : [],
+      });
+    }
+  };
+
   handleOnChangeSelect = async (event) => {
     if (this.props.doctorIdFromParent && this.props.doctorIdFromParent !== -1) {
       let doctorId = this.props.doctorIdFromParent;
       let date = event.target.value;
-      let res = await getScheduleDoctorByDate(doctorId, date);
+      // let res = await getScheduleDoctorByDate(doctorId, date);
 
-      if (res && res.errCode === 0) {
-        this.setState({
-          allAvalableTime: res.data ? res.data : [],
-        });
-      }
+      // if (res && res.errCode === 0) {
+      //   this.setState({
+      //     allAvalableTime: res.data ? res.data : [],
+      //   });
+      // }
+      this.getDataSchedule(doctorId, date);
 
-      console.log("check res schedule from react: ", res);
+      // console.log("check res schedule from react: ", res);
     }
   };
 
   handleClickScheduleTime = (time) => {
     this.setState({
       isOpenModalBooking: true,
+      dataScheduleTimeModal: time,
+    });
+    console.log("check time: ", time);
+  };
+
+  handleClickScheduleTime_Full = (time) => {
+    this.setState({
+      isOpenModalBooking: false,
       dataScheduleTimeModal: time,
     });
     console.log("check time: ", time);
@@ -136,6 +155,7 @@ class DoctorSchedule extends Component {
       dataScheduleTimeModal,
     } = this.state;
     let { language } = this.props;
+    console.log("check allAvalableTime: ", allAvalableTime);
 
     return (
       <>
@@ -168,17 +188,35 @@ class DoctorSchedule extends Component {
                     language === LANGUAGES.VI
                       ? item.timeTypeData.valueVI
                       : item.timeTypeData.valueEN;
-                  return (
-                    <button
-                      key={index}
-                      className={
-                        language === LANGUAGES.VI ? "btn-vi" : "btn-en"
-                      }
-                      onClick={() => this.handleClickScheduleTime(item)}
-                    >
-                      {timeDisplay}
-                    </button>
-                  );
+                  if (item.currentNumber < item.maxNumber) {
+                    return (
+                      <button
+                        key={index}
+                        className={
+                          language === LANGUAGES.VI ? "btn-vi" : "btn-en"
+                        }
+                        onClick={() => this.handleClickScheduleTime(item)}
+                      >
+                        {timeDisplay}
+                      </button>
+                    );
+                  } else {
+                    return (
+                      <>
+                        <button
+                          key={index}
+                          className={
+                            language === LANGUAGES.VI ? "btn-vi" : "btn-en"
+                          }
+                          onClick={() =>
+                            this.handleClickScheduleTime_Full(item)
+                          }
+                        >
+                          {timeDisplay} <br /> Đã đầy
+                        </button>
+                      </>
+                    );
+                  }
                 })
               ) : (
                 <div className="no-schedule">

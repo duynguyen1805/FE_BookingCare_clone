@@ -28,6 +28,7 @@ class BookingModal extends Component {
       doctorId: "",
       genders: "",
       timeType: "",
+      currentNumber: "",
     };
   }
 
@@ -98,9 +99,11 @@ class BookingModal extends Component {
       if (this.props.dataTime && !_.isEmpty(this.props.dataTime)) {
         let doctorId = this.props.dataTime.doctorId;
         let timeType = this.props.dataTime.timeType;
+        let currentNumber = this.props.dataTime.currentNumber;
         this.setState({
           doctorId: doctorId,
           timeType: timeType,
+          currentNumber: currentNumber,
         });
       }
     }
@@ -131,6 +134,7 @@ class BookingModal extends Component {
     let date = new Date(this.state.birthday).getTime();
     let timeString = this.buildTimeBooking(this.props.dataTime);
     let doctorname = this.buildDoctorName(this.props.dataTime);
+    let currentNumber = this.state.currentNumber;
 
     let res = await postPatientBookAppointment({
       fullname: this.state.fullname,
@@ -146,6 +150,7 @@ class BookingModal extends Component {
       language: this.props.language,
       timeString: timeString,
       doctorname: doctorname,
+      currentNumber: currentNumber + 1,
     });
 
     if (res && res.errCode === 0) {

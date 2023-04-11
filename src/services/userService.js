@@ -32,6 +32,10 @@ const DeleteScheduleServiceAPI = (scheduleId) => {
   });
 };
 
+const DeleteAllScheduleServiceAPI = (dayschedule) => {
+  return axios.delete("/api/delete-all-schedule", dayschedule);
+};
+
 const EditUserServiceAPI = (dataEdit) => {
   return axios.put("/api/edit-user", dataEdit);
 };
@@ -135,4 +139,5 @@ export {
   postSendRemedy,
   getAllSchedule,
   DeleteScheduleServiceAPI,
+  DeleteAllScheduleServiceAPI,
 };
