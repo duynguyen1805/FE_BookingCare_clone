@@ -5,7 +5,7 @@ import { postVerifyBookAppointment } from "../../services/userService";
 import HomeHeader from "../HomePage/HomeHeader";
 import "./VerifyEmail.scss";
 
-class DetailDoctor extends Component {
+class VerifyEmail extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -80,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DetailDoctor);
+export default connect(mapStateToProps, mapDispatchToProps)(VerifyEmail);

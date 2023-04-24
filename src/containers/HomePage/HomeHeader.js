@@ -6,11 +6,16 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
+import { useState } from "react";
 
 class HomeHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { showNav: true };
+    this.state = {
+      showNav: true,
+      valueChange: "",
+      listspec: ["Bac sy 1", "Bac sy 2", "Bac sy 3"],
+    };
     this.toggleNav = this.toggleNav.bind(this);
   }
   toggleNav() {
@@ -43,9 +48,18 @@ class HomeHeader extends React.Component {
     }
   };
 
+  handleChange = (event) => {
+    this.setState({
+      valueChange: event.target.value,
+    });
+  };
+
   render() {
-    const { showNav } = this.state;
+    const { showNav, listspec, valueChange } = this.state;
     let language = this.props.language; //lay tu redux ra
+    let filteredSpecs = listspec.filter((spec) =>
+      spec.toLowerCase().includes(valueChange.toLowerCase())
+    );
 
     return (
       <React.Fragment>
@@ -158,7 +172,21 @@ class HomeHeader extends React.Component {
               </div>
               <div className="search">
                 <i className="fas fa-search"></i>
-                <input type="text" placeholder="Tìm chuyên khoa khám bệnh" />
+                <input
+                  type="text"
+                  id="specialty"
+                  value={this.valueChange}
+                  placeholder="Tìm chuyên khoa khám bệnh"
+                  onChange={this.handleChange}
+                  list="specialties"
+                />
+                {/* <div className="search-results">
+                  {filteredSpecs.map((spec) => (
+                    <div key={spec} className="result">
+                      {spec}
+                    </div>
+                  ))}
+                </div> */}
               </div>
             </div>
             <div className="content-down">

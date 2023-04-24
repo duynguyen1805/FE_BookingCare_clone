@@ -45,7 +45,7 @@ class ManageSchedule extends Component {
     }
   };
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  async componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.allDoctors !== this.props.allDoctors) {
       let dataSelect = this.buildDataInputSelect(this.props.allDoctors);
       // console.log("data select ",dataSelect);
@@ -64,6 +64,7 @@ class ManageSchedule extends Component {
         // })
         data = data.map((item) => ({ ...item, isSelected: false }));
       }
+      await this.getAllUsersFromReact(this.state.selectedDoctor.value);
 
       this.setState({
         rangeTime: data,
@@ -137,6 +138,10 @@ class ManageSchedule extends Component {
       toast.error("Invalid date ! ");
       return;
     }
+    if (!maxNum) {
+      toast.error("Invalid maxNum ! ");
+      return;
+    }
     // >>> DD/MM/YYYY
     // let formatedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
 
@@ -170,6 +175,7 @@ class ManageSchedule extends Component {
 
     if (res && res.errCode === 0) {
       toast.success("Save Schedule success !");
+      await this.getAllUsersFromReact(this.state.selectedDoctor.value);
     } else {
       toast.error("Error saveBulkScheduleDoctorServiceAPI => res: ", res);
     }
@@ -194,16 +200,28 @@ class ManageSchedule extends Component {
 
   handleDeleteScheduleForDay = async () => {
     //console.log("check input ob user handleDelete: ", user); //>>> return ob{}
-    try {
-      let respone = await DeleteAllScheduleServiceAPI(Date.now() * 1000);
-      console.log("check respone delete user: ", respone);
-      if (respone && respone.errCode !== 0) {
-        alert(respone.errMessage);
-      } else {
-        await this.getAllUsersFromReact(this.state.selectedDoctor.value);
+    let { currentDate, selectedDoctor } = this.state;
+
+    if (selectedDoctor && _.isEmpty(selectedDoctor)) {
+      toast.error("Invalid selected Doctor !");
+      return;
+    }
+
+    if (!currentDate) {
+      toast.error("Select date want to DELETE the appointment.");
+    } else {
+      let formatedDate = new Date(currentDate).getTime();
+      try {
+        let respone = await DeleteAllScheduleServiceAPI(formatedDate);
+        console.log("check respone delete user: ", respone);
+        if (respone && respone.errCode !== 0) {
+          alert(respone.errMessage);
+        } else {
+          await this.getAllUsersFromReact(this.state.selectedDoctor.value);
+        }
+      } catch (e) {
+        console.log(e);
       }
-    } catch (e) {
-      console.log(e);
     }
   };
 
@@ -289,8 +307,8 @@ class ManageSchedule extends Component {
                     );
                   })}
               </div>
-              <div className="row ml-1">
-                <div className="col-4">
+              <div className="row col-12">
+                <div className="col-2">
                   <button
                     className="btn btn-primary btn-save-schedule mt-4"
                     onClick={() => this.handleSaveSchedule()}
@@ -298,12 +316,12 @@ class ManageSchedule extends Component {
                     <FormattedMessage id="manage-schedule.save-plan" />
                   </button>
                 </div>
-                <div className="col-7">
+                <div className="col-4">
                   <button
                     className="btn btn-primary btn-save-schedule mt-4"
                     onClick={() => this.handleDeleteScheduleForDay()}
                   >
-                    Xóa kế hoạch lịch hôm nay
+                    Xóa kế hoạch theo ngày
                   </button>
                 </div>
               </div>

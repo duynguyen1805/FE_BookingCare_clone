@@ -32,8 +32,23 @@ const DeleteScheduleServiceAPI = (scheduleId) => {
   });
 };
 
-const DeleteAllScheduleServiceAPI = (dayschedule) => {
-  return axios.delete("/api/delete-all-schedule", dayschedule);
+const DeleteAllScheduleServiceAPI = (formatedDate) => {
+  return axios.delete("/api/delete-all-schedule", {
+    data: {
+      date: formatedDate,
+    },
+  });
+};
+
+const DeletePatientServiceAPI = (data) => {
+  return axios.delete("/api/delete-patient", {
+    data: {
+      id: data.id,
+      doctorId: data.doctorId,
+      timeType: data.timeType,
+      date: data.date,
+    },
+  });
 };
 
 const EditUserServiceAPI = (dataEdit) => {
@@ -140,4 +155,5 @@ export {
   getAllSchedule,
   DeleteScheduleServiceAPI,
   DeleteAllScheduleServiceAPI,
+  DeletePatientServiceAPI,
 };

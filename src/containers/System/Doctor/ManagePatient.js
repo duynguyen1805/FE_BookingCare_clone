@@ -6,6 +6,7 @@ import DatePicker from "../../../components/Input/DatePicker";
 import {
   getAllPatientForDoctor,
   postSendRemedy,
+  DeletePatientServiceAPI,
 } from "../../../services/userService";
 import moment from "moment";
 import { LANGUAGES } from "../../../utils";
@@ -123,6 +124,26 @@ class ManagePatient extends Component {
     }
   };
 
+  handleDeletePatient = async (patient) => {
+    //console.log("check input ob user handleDelete: ", user); //>>> return ob{}
+    try {
+      let respone = await DeletePatientServiceAPI(patient);
+      console.log(
+        "check respone delete patient: ",
+        respone,
+        "check patient: ",
+        patient
+      );
+      if (respone && respone.errCode !== 0) {
+        alert(respone.errMessage);
+      } else {
+        await this.getDataPatient();
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   handleBtnRemedy = () => {};
 
   render() {
@@ -187,6 +208,12 @@ class ManagePatient extends Component {
                                 onClick={() => this.handleBtnConfirm(item)}
                               >
                                 Xác nhận
+                              </button>
+                              <button
+                                className="mp-btn-confirm"
+                                onClick={() => this.handleDeletePatient(item)}
+                              >
+                                Xóa
                               </button>
                             </td>
                           </tr>
