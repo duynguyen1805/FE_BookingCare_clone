@@ -25,6 +25,7 @@ import DetailSpecialty from "./Patient/Specialty/DetailSpecialty";
 import VerifyEmail from "./Patient/VerifyEmail";
 
 import CustomScrollbars from "../components/CustomScrollbars.js";
+import Empty from "../routes/Empty";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -54,6 +55,7 @@ class App extends Component {
             <div className="content-container">
               <CustomScrollbars style={{ height: "100vh", width: "100vw" }}>
                 <Switch>
+                  <Route path={path.EMPTY} exact component={Empty} />
                   <Route path={path.HOME} exact component={Home} />
                   <Route
                     path={path.LOGIN}

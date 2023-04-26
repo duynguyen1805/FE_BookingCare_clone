@@ -332,7 +332,6 @@ class ManageSchedule extends Component {
           <table id="customers">
             <thead>
               <tr>
-                <th>ID</th>
                 <th>ID Bác sĩ</th>
                 <th>Ngày</th>
                 <th>Thời gian</th>
@@ -359,13 +358,12 @@ class ManageSchedule extends Component {
                   return (
                     //return >>> 1 khoi (Fragments <> )
                     <tr>
-                      <td>{item.id}</td>
-                      <td>{item.doctorId}</td>
+                      <td className="item-center">{item.doctorId}</td>
                       <td>{date}</td>
-                      <td>{time.valueVI}</td>
-                      <td>{item.maxNumber}</td>
+                      <td className="item-center">{time.valueVI}</td>
+                      <td className="item-center">{item.maxNumber}</td>
                       <td>{item.currentNumber}</td>
-                      <td>
+                      <td className="item-center">
                         <button
                           className="btn-delete"
                           onClick={() => {

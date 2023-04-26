@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import Header from "../containers/Header/Header";
 
-class Home extends Component {
+class Doctor extends Component {
   render() {
     const { isLoggedIn } = this.props;
-    let linkToRedirect = isLoggedIn ? "/empty" : "/home"; // /doctor/manage-patient
 
-    return <Redirect to={linkToRedirect} />;
+    return (
+      <React.Fragment>
+        {isLoggedIn && <Header />}
+        <div></div>
+      </React.Fragment>
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
+    systemMenuPath: state.app.systemMenuPath,
     isLoggedIn: state.user.isLoggedIn,
   };
 };
@@ -21,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
