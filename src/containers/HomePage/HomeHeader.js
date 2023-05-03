@@ -16,14 +16,20 @@ class HomeHeader extends React.Component {
       showNav: true,
       valueChange: "",
       listspec: [
-        { id: 2, name: "Bac sy 1" },
-        { id: 3, name: "Bac sy 2" },
-        { id: 4, name: "Bac sy 3" },
-        { id: 5, name: "Bac sy 4" },
-        { id: 6, name: "Bac sy 5" },
-        { id: 7, name: "Bac sy 6" },
-        { id: 8, name: "Bac sy 7" },
-        { id: 9, name: "Bac sy 8" },
+        { id: 2, name: "Bac sy 1", role: 0 },
+        { id: 3, name: "Bac sy 2", role: 0 },
+        { id: 4, name: "Bac sy 3", role: 0 },
+        { id: 5, name: "Bac sy 4", role: 0 },
+        { id: 6, name: "Bac sy 5", role: 0 },
+        { id: 7, name: "Bac sy 6", role: 0 },
+        { id: 8, name: "Bac sy 7", role: 0 },
+        { id: 9, name: "Bac sy 8", role: 0 },
+        { id: 1, name: "Chuyên khoa 1", role: 1 },
+        { id: 2, name: "Chuyên khoa 2", role: 1 },
+        { id: 3, name: "Chuyên khoa 3", role: 1 },
+        { id: 4, name: "Chuyên khoa 4", role: 1 },
+        { id: 5, name: "Chuyên khoa 5", role: 1 },
+        { id: 6, name: "Chuyên khoa 6", role: 1 },
       ],
       arrDoctors: [],
     };
@@ -64,9 +70,13 @@ class HomeHeader extends React.Component {
       valueChange: event.target.value,
     });
   };
-  handleSelect = (id) => {
+  handleSelect = (search) => {
     if (this.props.history) {
-      this.props.history.push(`/detail-doctor/${id}`);
+      if (search.role === 0) {
+        this.props.history.push(`/detail-doctor/${search.id}`);
+      } else {
+        this.props.history.push(`/detail-specialty/${search.id}`);
+      }
     }
   };
 
@@ -205,7 +215,7 @@ class HomeHeader extends React.Component {
                       key={spec}
                       className="result"
                       onClick={() => {
-                        this.handleSelect(spec.id);
+                        this.handleSelect(spec);
                       }}
                     >
                       {spec.name}

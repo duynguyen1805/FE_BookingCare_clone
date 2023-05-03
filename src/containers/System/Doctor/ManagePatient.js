@@ -23,6 +23,7 @@ class ManagePatient extends Component {
       isOpenconfirmModal: false,
       dataModal: {},
       isShowLoading: false,
+      valueChange: "",
     };
   }
 
@@ -147,12 +148,24 @@ class ManagePatient extends Component {
 
   handleBtnRemedy = () => {};
 
+  handleChange = (event) => {
+    this.setState({
+      valueChange: event.target.value,
+    });
+  };
+
   render() {
     console.log("check state Quan ly benh nhan: ", this.state);
     // console.log("check user: ", this.props.user);
 
-    let { dataPatient, isOpenconfirmModal, dataModal } = this.state;
+    let { dataPatient, isOpenconfirmModal, dataModal, valueChange } =
+      this.state;
     let { language } = this.props;
+    let filteredPatient = dataPatient.filter(
+      (item) =>
+        item.fullname.toLowerCase().includes(valueChange.toLowerCase()) ||
+        item.phonenumber.toLowerCase().includes(valueChange.toLowerCase())
+    );
     return (
       <>
         <LoadingOverlay
@@ -171,6 +184,15 @@ class ManagePatient extends Component {
                   value={this.state.currentDate}
                 />
               </div>
+              <div className="col-4 form-group">
+                <label>Tìm kiếm</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  value={this.valueChange}
+                  onChange={this.handleChange}
+                />
+              </div>
               <div className="col-12 table-manage-patient">
                 <table style={{ width: "100%" }}>
                   <tbody>
@@ -184,7 +206,80 @@ class ManagePatient extends Component {
                       <th>Triệu chứng</th>
                       <th>Actions</th>
                     </tr>
-                    {dataPatient && dataPatient.length > 0 ? (
+                    {valueChange !== "" &&
+                      filteredPatient.map((item, index) => {
+                        let time =
+                          language === LANGUAGES.VI
+                            ? item.timeTypeDataPatient.valueVI
+                            : item.timeTypeDataPatient.valueEN;
+                        let gender =
+                          language === LANGUAGES.VI
+                            ? item.patientData.genderData.valueVI
+                            : item.patientData.genderData.valueEN;
+                        return (
+                          <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{time}</td>
+                            <td>{item.fullname}</td>
+                            <td>{item.address}</td>
+                            <td>{item.phonenumber}</td>
+                            <td>{gender}</td>
+                            <td>{item.reason}</td>
+                            <td>
+                              <button
+                                className="mp-btn-confirm"
+                                onClick={() => this.handleBtnConfirm(item)}
+                              >
+                                Xác nhận
+                              </button>
+                              <button
+                                className="mp-btn-confirm"
+                                onClick={() => this.handleDeletePatient(item)}
+                              >
+                                Xóa
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    {valueChange === "" &&
+                      dataPatient.map((item, index) => {
+                        let time =
+                          language === LANGUAGES.VI
+                            ? item.timeTypeDataPatient.valueVI
+                            : item.timeTypeDataPatient.valueEN;
+                        let gender =
+                          language === LANGUAGES.VI
+                            ? item.patientData.genderData.valueVI
+                            : item.patientData.genderData.valueEN;
+                        return (
+                          <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{time}</td>
+                            <td>{item.fullname}</td>
+                            <td>{item.address}</td>
+                            <td>{item.phonenumber}</td>
+                            <td>{gender}</td>
+                            <td>{item.reason}</td>
+                            <td>
+                              <button
+                                className="mp-btn-confirm"
+                                onClick={() => this.handleBtnConfirm(item)}
+                              >
+                                Xác nhận
+                              </button>
+                              <button
+                                className="mp-btn-confirm"
+                                onClick={() => this.handleDeletePatient(item)}
+                              >
+                                Xóa
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+
+                    {/* {dataPatient && dataPatient.length > 0 ? (
                       dataPatient.map((item, index) => {
                         let time =
                           language === LANGUAGES.VI
@@ -222,7 +317,7 @@ class ManagePatient extends Component {
                       })
                     ) : (
                       <tr>Không có bệnh nhân đặt lịch hôm nay</tr>
-                    )}
+                    )} */}
                   </tbody>
                 </table>
               </div>
