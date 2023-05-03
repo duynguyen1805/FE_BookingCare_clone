@@ -52,7 +52,8 @@ class ManagePatient extends Component {
     }
   }
 
-  handleOnchangeDatePicker = (date) => {
+  handleOnchangeDatePicker = async (date) => {
+    await this.getDataPatient();
     this.setState(
       {
         currentDate: date[0],
@@ -147,7 +148,7 @@ class ManagePatient extends Component {
   handleBtnRemedy = () => {};
 
   render() {
-    // console.log("check state Quan ly benh nhan: ", this.state);
+    console.log("check state Quan ly benh nhan: ", this.state);
     // console.log("check user: ", this.props.user);
 
     let { dataPatient, isOpenconfirmModal, dataModal } = this.state;

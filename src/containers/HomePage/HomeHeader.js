@@ -7,6 +7,7 @@ import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
 import { useState } from "react";
+import * as actions from "../../store/actions";
 
 class HomeHeader extends React.Component {
   constructor(props) {
@@ -14,7 +15,17 @@ class HomeHeader extends React.Component {
     this.state = {
       showNav: true,
       valueChange: "",
-      listspec: ["Bac sy 1", "Bac sy 2", "Bac sy 3"],
+      listspec: [
+        { id: 2, name: "Bac sy 1" },
+        { id: 3, name: "Bac sy 2" },
+        { id: 4, name: "Bac sy 3" },
+        { id: 5, name: "Bac sy 4" },
+        { id: 6, name: "Bac sy 5" },
+        { id: 7, name: "Bac sy 6" },
+        { id: 8, name: "Bac sy 7" },
+        { id: 9, name: "Bac sy 8" },
+      ],
+      arrDoctors: [],
     };
     this.toggleNav = this.toggleNav.bind(this);
   }
@@ -53,13 +64,19 @@ class HomeHeader extends React.Component {
       valueChange: event.target.value,
     });
   };
+  handleSelect = (id) => {
+    if (this.props.history) {
+      this.props.history.push(`/detail-doctor/${id}`);
+    }
+  };
 
   render() {
-    const { showNav, listspec, valueChange } = this.state;
+    const { showNav, listspec, valueChange, arrDoctors } = this.state;
     let language = this.props.language; //lay tu redux ra
     let filteredSpecs = listspec.filter((spec) =>
-      spec.toLowerCase().includes(valueChange.toLowerCase())
+      spec.name.toLowerCase().includes(valueChange.toLowerCase())
     );
+    console.log("check arrDoctor: ", arrDoctors);
 
     return (
       <React.Fragment>
@@ -180,14 +197,22 @@ class HomeHeader extends React.Component {
                   onChange={this.handleChange}
                   list="specialties"
                 />
-                {/* <div className="search-results">
+              </div>
+              {valueChange !== "" && (
+                <div className="search-results">
                   {filteredSpecs.map((spec) => (
-                    <div key={spec} className="result">
-                      {spec}
+                    <div
+                      key={spec}
+                      className="result"
+                      onClick={() => {
+                        this.handleSelect(spec.id);
+                      }}
+                    >
+                      {spec.name}
                     </div>
                   ))}
-                </div> */}
-              </div>
+                </div>
+              )}
             </div>
             <div className="content-down">
               <div className="options">

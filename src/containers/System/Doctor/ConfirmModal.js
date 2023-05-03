@@ -10,6 +10,8 @@ class ConfirmModal extends Component {
     super(props);
     this.state = {
       email: "",
+      fullname: "",
+      phonenumber: "",
       imgBase64: "",
     };
   }
@@ -18,6 +20,8 @@ class ConfirmModal extends Component {
     if (this.props.dataModal) {
       this.setState({
         email: this.props.dataModal.email,
+        fullname: this.props.dataModal.fullname,
+        phonenumber: this.props.dataModal.phonenumber,
       });
     }
   }
@@ -26,6 +30,8 @@ class ConfirmModal extends Component {
     if (prevProps.dataModal !== this.props.dataModal) {
       this.setState({
         email: this.props.dataModal.email,
+        fullname: this.props.dataModal.fullname,
+        phonenumber: this.props.dataModal.phonenumber,
       });
     }
   }
@@ -52,8 +58,7 @@ class ConfirmModal extends Component {
   };
 
   render() {
-    let { isOpenModal, closeconfirmModal, dataModal, sendRemedy } = this.props;
-
+    let { isOpenModal, closeconfirmModal } = this.props;
     return (
       <Modal
         isOpen={isOpenModal}
@@ -73,6 +78,16 @@ class ConfirmModal extends Component {
           </button>
         </div>
         <ModalBody>
+          <div className="row">
+            <div className="col-12 form-group">
+              <label>Họ tên bệnh nhân: </label>
+              <span> {this.state.fullname}</span>
+            </div>
+            <div className="col-12 form-group">
+              <label>Số điện thoại: </label>
+              <span> {this.state.phonenumber}</span>
+            </div>
+          </div>
           <div className="row">
             <div className="col-6 form-group">
               <label>Email bệnh nhân</label>

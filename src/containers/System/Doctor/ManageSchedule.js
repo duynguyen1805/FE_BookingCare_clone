@@ -328,7 +328,7 @@ class ManageSchedule extends Component {
             </div>
           </div>
         </div>
-        <div className="users-table mt-4 col-7 mx-auto">
+        <div className="users-table mt-4 mb-5 col-7 mx-auto">
           <table id="customers">
             <thead>
               <tr>
@@ -362,7 +362,7 @@ class ManageSchedule extends Component {
                       <td>{date}</td>
                       <td className="item-center">{time.valueVI}</td>
                       <td className="item-center">{item.maxNumber}</td>
-                      <td>{item.currentNumber}</td>
+                      <td className="item-center">{item.currentNumber}</td>
                       <td className="item-center">
                         <button
                           className="btn-delete"
