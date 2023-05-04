@@ -70,7 +70,7 @@ class Doctor extends Component {
                       "binary"
                     );
                   }
-                  let nameVI = `${item.positionData.valueVI}, ${item.lastName}, ${item.firstName}`;
+                  let nameVI = `${item.positionData.valueVI}, ${item.lastName} ${item.firstName}`;
                   let nameEN = `${item.positionData.valueEN}, ${item.firstName}, ${item.lastName}`;
                   return (
                     <div

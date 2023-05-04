@@ -47,7 +47,7 @@ class AllDoctor extends Component {
             if (item.image) {
               imageBase64 = new Buffer(item.image, "base64").toString("binary");
             }
-            let nameVI = `${item.positionData.valueVI}, ${item.lastName}, ${item.firstName}`;
+            let nameVI = `${item.positionData.valueVI}, ${item.lastName} ${item.firstName}`;
             let nameEN = `${item.positionData.valueEN}, ${item.firstName}, ${item.lastName}`;
             return (
               <div onClick={() => this.handleViewDetailDoctor(item)}>

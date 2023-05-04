@@ -10,9 +10,13 @@
     // border: 1px solid green;
 
     .content-left {
+      display: flex;
+      justify-content: center;
       width: 20%;
       border: 1px solid #0071ba;
-      background: center center no-repeat;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
       width: 140px;
       height: 140px;
       border-radius: 50%;
