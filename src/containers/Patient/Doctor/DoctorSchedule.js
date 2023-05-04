@@ -212,7 +212,8 @@ class DoctorSchedule extends Component {
                             this.handleClickScheduleTime_Full(item)
                           }
                         >
-                          {timeDisplay} <br /> Đã đầy
+                          {timeDisplay} <br />
+                          <FormattedMessage id="patient.detail-doctor.full" />
                         </button>
                       </>
                     );

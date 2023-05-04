@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import Header from "../containers/Header/Header";
 
 class Doctor extends Component {
+  async componentDidMount() {
+    document.title = "Quản lý";
+  }
   render() {
     const { isLoggedIn } = this.props;
 

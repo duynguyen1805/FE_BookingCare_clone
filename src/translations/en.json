@@ -70,7 +70,8 @@
   "patient": {
     "detail-doctor": {
       "schedule": "Examination Schedule",
-      "no-schedule": "There are no empty appointments during this time. Please choose another time period."
+      "no-schedule": "There are no empty appointments during this time. Please choose another time period.",
+      "full": "Full"
     },
     "more-infor": {
       "text-address": "Address of examination",

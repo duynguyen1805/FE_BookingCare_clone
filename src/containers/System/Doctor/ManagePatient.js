@@ -28,6 +28,7 @@ class ManagePatient extends Component {
   }
 
   async componentDidMount() {
+    document.title = "Quản lý Lịch hẹn";
     this.getDataPatient();
   }
 

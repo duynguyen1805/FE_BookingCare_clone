@@ -31,13 +31,18 @@
       padding-top: 20px;
 
       .up {
-        font-size: 27px;
+        font-size: 30px;
         font-weight: 600;
       }
 
       .down {
         padding-top: 5px;
-        font-size: 17px;
+        font-size: 18px;
+
+        span {
+          font-weight: 400;
+          font-size: 18px;
+        }
       }
     }
   }

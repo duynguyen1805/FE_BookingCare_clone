@@ -70,7 +70,8 @@
   "patient": {
     "detail-doctor": {
       "schedule": "Lịch khám",
-      "no-schedule": "Không có lịch hẹn trống trong thời gian này. Vui lòng chọn khoản thời gian khác."
+      "no-schedule": "Không có lịch hẹn trống trong thời gian này. Vui lòng chọn khoản thời gian khác.",
+      "full": "Đã đầy"
     },
     "more-infor": {
       "text-address": "Địa chỉ khám",

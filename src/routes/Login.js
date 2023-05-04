@@ -52,7 +52,7 @@ class Login extends Component {
 
   redirectToSystemPage = () => {
     const { navigate } = this.props;
-    const redirectPath = "/system/user-redux";
+    const redirectPath = "/login"; ///system/user-redux
     navigate(`${redirectPath}`);
   };
 

@@ -6,8 +6,6 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
-import { useState } from "react";
-import * as actions from "../../store/actions";
 
 class HomeHeader extends React.Component {
   constructor(props) {

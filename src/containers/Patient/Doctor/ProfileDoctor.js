@@ -120,14 +120,14 @@ class ProfileDoctor extends Component {
               ) : (
                 <>{this.renderTimeBooking(dataTime)}</>
               )}
+              {isShowLinkDetail === true && (
+                <div className="view-detail-doctor">
+                  <Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
-        {isShowLinkDetail === true && (
-          <div className="view-detail-doctor">
-            <Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link>
-          </div>
-        )}
         {isShowPrice === true && (
           <div className="price">
             <span>

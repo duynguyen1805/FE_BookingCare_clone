@@ -69,7 +69,7 @@ class UserRedux extends Component {
     //   console.log(e);
     // }
     //-----------------------------------------------------------
-
+    document.title = "Quản lý Tài khoản Bác sỹ";
     this.props.getGenderStart(); //dispatch ben duoi truoc or
     // this.props.dispatch(actions.fetchGenderStart())
     this.props.getPositionStart();

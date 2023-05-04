@@ -53,6 +53,7 @@ class ManageDoctor extends Component {
   }
 
   componentDidMount() {
+    document.title = "Quản lý Thông tin Bác sỹ";
     this.props.fetchAllDoctor();
     this.props.getAllRequiredDoctorInfor();
   }

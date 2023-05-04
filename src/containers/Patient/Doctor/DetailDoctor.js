@@ -17,6 +17,7 @@ class DetailDoctor extends Component {
   }
 
   async componentDidMount() {
+    document.title = "Thông tin Bác sỹ";
     if (
       this.props.match &&
       this.props.match.params &&

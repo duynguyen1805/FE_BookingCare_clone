@@ -24,6 +24,10 @@ class Login extends Component {
     };
   }
 
+  async componentDidMount() {
+    document.title = "Đăng nhập";
+  }
+
   //state quản lý các giá trị của component
   //state là biến lưu giữ giá trị component suốt quá trình hđ
 

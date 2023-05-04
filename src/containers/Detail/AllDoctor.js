@@ -14,6 +14,7 @@ class AllDoctor extends Component {
   }
 
   componentDidMount() {
+    document.title = "Bác sỹ";
     this.props.loadTopDoctors();
   }
 

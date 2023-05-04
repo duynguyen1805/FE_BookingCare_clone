@@ -23,6 +23,7 @@ class DetailSpecialty extends Component {
   }
 
   async componentDidMount() {
+    document.title = "Thông tin Chuyên khoa";
     if (
       this.props.match &&
       this.props.match.params &&

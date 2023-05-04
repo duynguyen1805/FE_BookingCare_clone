@@ -30,6 +30,7 @@ class ManageSchedule extends Component {
   }
 
   componentDidMount() {
+    document.title = "Quản lý Kế hoạch khám của Bác sỹ";
     this.props.fetchAllDoctor();
     this.props.fetchAllScheduleTime();
     // this.getAllUsersFromReact();

@@ -14,6 +14,7 @@ class AllSpec extends Component {
   }
 
   async componentDidMount() {
+    document.title = "Chuyên Khoa";
     let res = await getAllSpecialtyServiceAPI();
     if (res && res.errCode === 0) {
       this.setState({
